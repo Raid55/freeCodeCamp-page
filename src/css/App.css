@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+#mainBar{
+  background-color: rgb(32, 32, 32);
+  color: rgb(193, 193, 193);
+  font-weight: 900;
+  text-align: left;
+  font-size: 3em;
+  height: 1;
+}
+
+footer{
+  text-align: center;
+}
+
+/****************************/
+/*********userstuff**********/
+/****************************/
+
+.userpic{
+  border-radius: 50%;
+  height: 9em;
+  width:9em;
+  align-content: flex-start;
+}
+.profileBox{
+  display: flex;
+  background-color: rgb(97, 97, 97);
+  border: 4px dashed rgb(37, 37, 37);
+  flex-direction: row;
+  padding: 1.5em
+}
+.contentGit{
+  align-self: center;
+  font-weight: 600;
+  color: rgb(20, 152, 236);
+}
+#username{
+  align-self: center;
+  font-weight: 900;
+  color: purple;
+}
+.profileInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+	justify-content: center;
+
+}
+
+/****************************/
+/*******searchboxstuff*******/
+/****************************/
+
+.searchBox{
+  font-size:30px;
+}
+
+.searchBtn{
+  background-color: rgb(88, 88, 88);
+  border: 2px solid rgb(43, 43, 43);
+  color: rgb(187, 187, 187);
+  padding: 5px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

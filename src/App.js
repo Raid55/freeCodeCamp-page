@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Layout from './components/layout.js'
+import { Router, Route, Link, browserHistory } from 'react-router'
+
+import './css/App.css';
 
 class App extends Component {
+  state ={
+    username:"",
+    maxChar: 39
+  }
+  handleChange= () => {
+    this.setState({username: this.refs.username.value.substr(0, this.state.maxChar)})
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Layout>
+          {this.props.children ? this.props.children :
+          <div>
+            <input className="searchBox" type="text" value={this.state.username} ref="username" onChange={this.handleChange}/>
+            <Link to={`/user/${this.state.username}`}>
+              <input className="searchBtn" type='button' value="Search"/>
+            </Link>
+          </div>}
+        </Layout>
+
       </div>
     );
   }
