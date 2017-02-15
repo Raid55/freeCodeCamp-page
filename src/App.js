@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Layout from './components/layout.js'
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Link } from 'react-router'
 
 import './css/App.css';
 

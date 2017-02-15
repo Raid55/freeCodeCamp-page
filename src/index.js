@@ -5,7 +5,7 @@ import Repos from './components/repos.js';
 import Following from './components/following.js';
 import Followers from './components/followers.js';
 import Userpage from './components/user.js';
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 
 import './css/index.css';
 
