@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Repos from './components/repos.js';
-import Following from './components/following.js';
-import Followers from './components/followers.js';
-import Userpage from './components/user.js';
+import App from './App.js';
+import Repos from './components/repos.jsx';
+import Following from './components/following.jsx';
+import Followers from './components/followers.jsx';
+import Userpage from './components/user.jsx';
 import { Router, Route, browserHistory } from 'react-router'
 
 import './css/index.css';

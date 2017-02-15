@@ -6,10 +6,10 @@ export default class extends Component {
     err: false
   }
 
-  componentDidMount(){
+  fetchInfo(){
     const username = this.props.params.username
     const that = this
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.github.com/users/${username}`)
+    fetch(`https://api.github.com/users/${username}`)
     .then(function(response) {
       if (response.status === 200) {
         return response;
@@ -36,6 +36,16 @@ export default class extends Component {
     .catch(function(err){
         that.setState({err: true})
     })
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if(prevProps.params.username !== this.props.params.username){
+      this.fetchInfo()
+    }
+  }
+
+  componentDidMount(){
+    this.fetchInfo()
   }
   render(){
     const {photo,username,bio,blog,err,repos,followers,following} = this.state

@@ -8,7 +8,7 @@ export default class extends Component {
   componentDidMount(){
     const username = this.props.params.username
     const that = this
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.github.com/users/${username}/followers`)
+    fetch(`https://api.github.com/users/${username}/followers`)
     .then(function(response) {
       if (response.status === 200) {
         return response;
@@ -51,9 +51,12 @@ export default class extends Component {
         <div>
           <div>{username} is Followed by:</div>
           { followersArr.map((el) =>
-            <Link to={`/user/${el.login}`}>
-              <div><img className="ffImages" src={ el.avatar_url } alt=""/><span>{ el.login }</span></div>
-            </Link>
+            <div>
+              <Link to={`/user/${el.login}`}>
+                <div><img className="ffImages" src={ el.avatar_url } alt=""/><span>{ el.login }</span></div>
+              </Link>
+              <hr/>
+            </div>
           ) }
         </div>
       )
