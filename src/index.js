@@ -15,7 +15,7 @@ ReactDOM.render(
       <Route path="user/:username" component={Userpage}>
         <Route path="repos" component={Repos}/>
         <Route path="followers" component={Followers}/>
-        <Route path="folowing" component={Following}/>
+        <Route path="following" component={Following}/>
       </Route>
     </Route>
   </Router>,

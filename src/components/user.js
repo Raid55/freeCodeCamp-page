@@ -26,7 +26,10 @@ export default class extends Component {
           username: gitJson.login,
           photo: gitJson.avatar_url,
           bio: gitJson.bio,
-          blog: gitJson.blog
+          blog: gitJson.blog,
+          repos: gitJson.public_repos,
+          followers: gitJson.followers,
+          following: gitJson.following
         })
       }
     })
@@ -35,31 +38,36 @@ export default class extends Component {
     })
   }
   render(){
-    const {photo,username,bio,blog,err} = this.state
+    const {photo,username,bio,blog,err,repos,followers,following} = this.state
     if(err === false){
       return (
         <div>
           <div className="profileBox">
+            <img className="userpic" src={ photo } alt=""/>
             <div className="profileInfo">
-              <img className="userpic" src={ photo } alt=""/>
               <div id="username">{ username }</div>
               <div className="contentGit">{ bio }</div>
               <div className="contentGit">{ blog }</div>
             </div>
-            <hr/>
             <div className="profileStats">
-              <div>
-                <p>123</p>
-                <p>repos</p>
-              </div>
-              <div>
-                <p>1234</p>
-                <p>Followers</p>
-              </div>
-              <div>
-                <p>123</p>
-                <p>following</p>
-              </div>
+              <Link to={`/user/${this.state.username}/repos`}>
+                <div>
+                  <p>{ repos }</p>
+                  <p>repos</p>
+                </div>
+              </Link>
+              <Link to={`/user/${this.state.username}/followers`}>
+                <div>
+                  <p>{ followers }</p>
+                  <p>Followers</p>
+                </div>
+              </Link>
+              <Link to={`/user/${this.state.username}/following`}>
+                <div>
+                  <p>{ following }</p>
+                  <p>following</p>
+                </div>
+              </Link>
             </div>
           </div>
           {this.props.children}
