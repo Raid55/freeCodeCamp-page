@@ -20,7 +20,7 @@ export default class extends Component {
     .then(result => result.json())
     .then(function(gitJson){
       if(gitJson.message){
-        that.setState({err: true})
+        throw new Error(gitJson.message);
       }else{
         that.setState({
           username: gitJson.login,
@@ -47,6 +47,7 @@ export default class extends Component {
   componentDidMount(){
     this.fetchInfo()
   }
+
   render(){
     const {photo,username,bio,blog,err,repos,followers,following} = this.state
     if(err === false){

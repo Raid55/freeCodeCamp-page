@@ -52,7 +52,7 @@ export default class extends Component {
           <div>{username}'s Repos</div>
           { reposArr.map((el) =>
           <div>
-            <a className="reposList" href={el.html_url}>
+            <a className="reposList" href={el.html_url} target="_blank">
               <div>{ el.full_name } <span className="starGazzer"> Stars: { el.stargazers_count }</span></div>
             </a>
             <hr/>

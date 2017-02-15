@@ -5,13 +5,15 @@ import Repos from './components/repos.jsx';
 import Following from './components/following.jsx';
 import Followers from './components/followers.jsx';
 import Userpage from './components/user.jsx';
-import { Router, Route, browserHistory } from 'react-router'
+import Search from './components/search.jsx'
+import { Router, Route,IndexRoute, browserHistory } from 'react-router'
 
 import './css/index.css';
 
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
+      <IndexRoute component={Search}/>
       <Route path="user/:username" component={Userpage}>
         <Route path="repos" component={Repos}/>
         <Route path="followers" component={Followers}/>
