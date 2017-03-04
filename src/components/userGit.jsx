@@ -61,19 +61,19 @@ export default class extends Component {
               <div className="contentGit">{ blog }</div>
             </div>
             <div className="profileStats">
-              <Link to={`/user/${this.state.username}/repos`}>
+              <Link to={`/github/${this.state.username}/repos`}>
                 <div>
                   <p>{ repos }</p>
                   <p>repos</p>
                 </div>
               </Link>
-              <Link to={`/user/${this.state.username}/followers`}>
+              <Link to={`/github/${this.state.username}/followers`}>
                 <div>
                   <p>{ followers }</p>
                   <p>Followers</p>
                 </div>
               </Link>
-              <Link to={`/user/${this.state.username}/following`}>
+              <Link to={`/github/${this.state.username}/following`}>
                 <div>
                   <p>{ following }</p>
                   <p>following</p>

@@ -4,20 +4,28 @@ import App from './App.js';
 import Repos from './components/repos.jsx';
 import Following from './components/following.jsx';
 import Followers from './components/followers.jsx';
-import Userpage from './components/user.jsx';
-import Search from './components/search.jsx'
-import { Router, Route,IndexRoute, browserHistory } from 'react-router'
+import UserpageGit from './components/userGit.jsx';
+import TwitchFeat from './components/twitchFeatured.jsx';
+import GitSearch from './components/searchGit.jsx';
+import UserTwitch from './components/twitchUserPage.jsx';
+import Home from './components/home.jsx';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 import './css/index.css';
 
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Search}/>
-      <Route path="user/:username" component={Userpage}>
-        <Route path="repos" component={Repos}/>
-        <Route path="followers" component={Followers}/>
-        <Route path="following" component={Following}/>
+      <IndexRoute component={Home}/>
+      <Route path="twitch" component={TwitchFeat}>
+        <Route path=":username" component={UserTwitch}/>
+      </Route>
+      <Route path="github" component={GitSearch}>
+        <Route path=":username" component={UserpageGit}>
+          <Route path="repos" component={Repos}/>
+          <Route path="followers" component={Followers}/>
+          <Route path="following" component={Following}/>
+        </Route>
       </Route>
     </Route>
   </Router>,

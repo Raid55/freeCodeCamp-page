@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+a {
+
+  text-decoration: none;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -128,11 +133,94 @@ footer{
   font-size: 18px;
 }
 
+.mainBox {
+  display: flex;
+
+}
+
 #maomao{
   height: 36.2em;
 }
 
-@keyframes App-logo-spin {
+.featTwitchBoxHolder{
+  padding: 1.5em 1.5em 1.5em 1.5em;
+  background-color: rgb(166, 166, 166);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+
+}
+
+.twitchBox{
+  background-color: rgb(164, 128, 0);
+  border: 0.1em dashed rgb(71, 71, 71);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 35% 0 35%;
+}
+
+.onlineCirclePic{
+  justify-content: center;
+  margin: 1.2em 1.2em 1.2em 1.2em;
+  border: 5px solid rgb(83, 201, 0);
+  height: 100%;
+  width: 4.5em;
+  border-radius: 50%;
+}
+.offlineCirclePic{
+  justify-content: center;
+  margin: 1.2em 1.2em 1.2em 1.2em;
+  border: 4px solid rgb(142, 0, 4);
+  height: 100%;
+  width: 4.5em;
+  border-radius: 50%;
+}
+
+.onlineUsername{
+  font-size: 28px;
+  font-weight: 800;
+  margin: 28px 0 0 0px;
+  color: rgb(63, 44, 215);
+}
+.offlineUsername{
+  font-weight: 800;
+  font-size: 28px;
+  margin: 28px 0 0 0px;
+  color: rgb(40, 40, 40);
+}
+
+.gameText{
+  margin: 4px 0 0 0px;
+  color: rgb(208, 206, 8);
+  font-weight: 700;
+  font-size: 1.3em;
+}
+.statusText{
+  margin: 4px 0 0 0px;
+  color: rgb(64, 64, 64);
+  font-weight: 500;
+  font-size: 1em;
+}
+.twitchSearchBox{
+  /*width: 50%;*/
+  border: 3px solid tomato;
+  margin: 0 35% 0 35%;
+  font-size:30px;
+}
+
+.largerPic{
+  width: 9em;
+}
+
+.redBold{
+  color: rgb(148, 0, 0);
+  font-weight: 900;
+  font-size: 1.6em;
+}
+
+/*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/

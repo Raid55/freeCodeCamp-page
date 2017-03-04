@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
-import mao from '../../public/mao-mao.jpg'
+
 
 export default class extends Component {
   state ={
@@ -13,14 +13,13 @@ export default class extends Component {
   render() {
     return (
       <div>
+        <h3>Search for github user and get his profile and stuff</h3>
         <input className="searchBox" type="text" value={this.state.username} ref="username" onChange={this.handleChange}/>
-        <Link to={`/user/${this.state.username}`}>
+        <Link to={`/github/${this.state.username}`}>
           <input className="searchBtn" type='button' value="Search"/>
         </Link>
         <div>
-          <a href="https://en.wikipedia.org/wiki/Mao_Zedong">
-            <img id="maomao" src={mao} alt=""/>
-          </a>
+          {this.props.children}
         </div>
       </div>
     );

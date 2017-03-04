@@ -37,7 +37,7 @@ export default class extends Component {
     if(!followingArr){
       return (
         <div>
-          LOADING...WAIT YOU IMPATIENT FU....
+          LOADING...
         </div>
       )
     }else if(this.state.err === true){
