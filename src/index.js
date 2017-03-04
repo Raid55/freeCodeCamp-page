@@ -9,6 +9,7 @@ import TwitchFeat from './components/twitchFeatured.jsx';
 import GitSearch from './components/searchGit.jsx';
 import UserTwitch from './components/twitchUserPage.jsx';
 import Home from './components/home.jsx';
+import Calc from './components/calculator.jsx';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 import './css/index.css';
@@ -17,6 +18,7 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
+      <Route path="calculator" component={Calc}/>
       <Route path="twitch" component={TwitchFeat}>
         <Route path=":username" component={UserTwitch}/>
       </Route>

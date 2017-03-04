@@ -36,7 +36,7 @@ export default class extends Component {
             <Tab containerElement={<Link to="/twitch"/>} style={blueTab} label="Twitch Status">
 
             </Tab>
-            <Tab containerElement={<Link to="/"/>} style={blueTab} label="lol">
+            <Tab containerElement={<Link to="/calculator"/>} style={blueTab} label="Calculator">
               lol
             </Tab>
           </Tabs>
