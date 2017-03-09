@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.js';
-import Repos from './components/repos.jsx';
-import Following from './components/following.jsx';
-import Followers from './components/followers.jsx';
-import UserpageGit from './components/userGit.jsx';
-import TwitchFeat from './components/twitchFeatured.jsx';
-import GitSearch from './components/searchGit.jsx';
-import UserTwitch from './components/twitchUserPage.jsx';
 import Home from './components/home.jsx';
 import Calc from './components/calculator.jsx';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import Repos from './components/github/repos.jsx';
+import Following from './components/github/following.jsx';
+import Followers from './components/github/followers.jsx';
+import UserpageGit from './components/github/userGit.jsx';
+import TwitchFeat from './components/twitch/twitchFeatured.jsx';
+import GitSearch from './components/github/searchGit.jsx';
+import UserTwitch from './components/twitch/twitchUserPage.jsx';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import './css/index.css';
 
