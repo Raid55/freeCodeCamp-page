@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-const feat = ['freecodecamp',"nalcs1","summit1g"];
+const feat = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "brunofin", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
 export default class extends Component {
   state ={
@@ -38,7 +38,12 @@ export default class extends Component {
         })
         .then(result => result.json())
         .then((gitJsonChannel) => {
-          if(gitJsonStream.stream === null){
+          if(gitJsonChannel.error){
+            finalArr.push({
+              username: el,
+              status: null
+            })
+          }else if(gitJsonStream.stream === null){
             finalArr.push({
               id: gitJsonChannel._id,
               stream: null,
@@ -53,7 +58,7 @@ export default class extends Component {
             })
           }
           // console.log(finalArr);
-          console.log("top",finalArr[0].channel.logo);
+          // console.log("top",finalArr[0].channel.logo);
           that.setState({featured: that.state.featured.concat(finalArr)})
           finalArr = [];
         })
@@ -80,24 +85,29 @@ export default class extends Component {
         <p> SOUND THE ALARM, WE HAVE A PROBLEM</p>
       )
     }else{
+      console.log("lol,",this.state.featured);
       return(
         <div className="featTwitchBoxHolder">
           <p>Pardon this horible CSS, Im not really good at styling. P.s. User Photoes are squished just click on any tab away and then back to this page to fix. Im still trying to find what makes that bug happen.</p>
-          { this.state.featured.map((el) =>{
-            return(
-              <a target="_blank" key={el.id} href={el.channel.url}>
-                <div className="twitchBox">
-                  <img className={ el.stream === null ? "offlineCirclePic" : "onlineCirclePic" }
-                    src={ el.channel.logo }
-                    alt={ el.channel.name } />
-                  <div>
-                    <p className={ el.stream === null ? "offlineUsername" :"onlineUsername"}>{ el.channel.name }</p>
-                    <p className="gameText">{ el.stream === null ? `(ー。ー)` : el.channel.game }</p>
-                    <p className="statusText">{ el.stream === null ? `Offline` : el.channel.status }</p>
-                  </div>
+          { this.state.featured.map((el) => {
+            return el.status === null ?
+            <div className="twitchBox">
+              <p> { el.username } </p>
+              <p> does not exists on the twitch...</p>
+            </div>
+            :
+            <a target="_blank" key={el.id} href={el.channel.url}>
+              <div className="twitchBox">
+                <img className={ el.stream === null ? "offlineCirclePic" : "onlineCirclePic" }
+                  src={ el.channel.logo }
+                  alt={ el.channel.name } />
+                <div>
+                  <p className={ el.stream === null ? "offlineUsername" :"onlineUsername"}>{ el.channel.name }</p>
+                  <p className="gameText">{ el.stream === null ? `(ー。ー)` : el.channel.game }</p>
+                  <p className="statusText">{ el.stream === null ? `Offline` : el.channel.status }</p>
                 </div>
-              </a>
-            )
+              </div>
+            </a>
           }) }
           <p>Search for a Twitch user person thing: </p>
           <input className="twitchSearchBox" type="text" value={this.state.username} ref="username" onChange={this.handleChange}/>
