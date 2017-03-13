@@ -22,6 +22,15 @@ export default class extends Component {
     });
   }
 
+  handleClear = () => {
+    this.setState({
+      calcOutput: "",
+      oppSlot: "",
+      numSlot: "",
+      accu: 0
+    });
+  }
+
   handleOpp = (opp) => {
     let tempAccu = 0;
     const { oppSlot, numSlot, accu, calcOutput } = this.state
@@ -56,7 +65,7 @@ export default class extends Component {
         numSlot: "",
         accu: tempAccu,
         oppSlot: opp,
-        calcOutput: tempAccu
+        calcOutput: tempAccu+" "+opp+" "
       });
     }else{
       console.log("error ERROR SYNTAXICALS ERRORS")
@@ -139,6 +148,9 @@ export default class extends Component {
           </MuiThemeProvider>
           <MuiThemeProvider>
             <RaisedButton label="=" onClick={() => this.handleOpp("=") }/>
+          </MuiThemeProvider>
+          <MuiThemeProvider>
+            <RaisedButton label="C/e" onClick={ this.handleClear }/>
           </MuiThemeProvider>
         </span>
       </div>
