@@ -36,46 +36,25 @@ export default class extends Component {
     }else if(numSlot !== "" && oppSlot !== ""){
       switch(oppSlot) {
         case "+":
-          let tempAccu = accu - Number(numSlot)
-          this.setState({
-            numSlot: "",
-            accu: tempAccu,
-            oppSlot: "",
-            calcOutput: accu
-          });
-          break;
+          let tempAccu = accu + Number(numSlot);
         case "-":
-          let tempAccu = accu - Number(numSlot)
-          this.setState({
-            numSlot: "",
-            accu: tempAccu,
-            oppSlot: "",
-            calcOutput: tempAccu
-          });
-          break;
+          let tempAccu = accu - Number(numSlot);
         case "*":
-          let tempAccu = accu - Number(numSlot)
-          this.setState({
-            numSlot: "",
-            accu: tempAccu,
-            oppSlot: "",
-            calcOutput: tempAccu
-          });
-          break;
+          let tempAccu = accu * Number(numSlot);
         case "/":
-          let tempAccu = accu - Number(numSlot)
-          this.setState({
-            numSlot: "",
-            accu: tempAccu,
-            oppSlot: "",
-            calcOutput: tempAccu
-          });
-          break;
+          let tempAccu = accu / Number(numSlot);
         default:
           this.setState({
             calcOutput: "error with that things of the syntax"
           });
+          break;
       }
+      this.setState({
+        numSlot: "",
+        accu: tempAccu,
+        oppSlot: "",
+        calcOutput: tempAccu
+      });
     }else{
       console.log("error ERROR SYNTAXICALS ERRORS")
       this.setState({
