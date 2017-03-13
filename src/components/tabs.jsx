@@ -39,6 +39,9 @@ export default class extends Component {
             <Tab containerElement={<Link to="/weather"/>} style={blueTab} label="Live Weather">
 
             </Tab>
+            <Tab containerElement={<Link to="/crappyCalculator"/>} style={blueTab} label="Crappy Calc">
+
+            </Tab>
           </Tabs>
         </MuiThemeProvider>
         <div>
