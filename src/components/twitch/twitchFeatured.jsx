@@ -85,7 +85,7 @@ export default class extends Component {
         <p> SOUND THE ALARM, WE HAVE A PROBLEM</p>
       )
     }else{
-      console.log("lol,",this.state.featured);
+      // console.log("lol,",this.state.featured);
       return(
         <div className="featTwitchBoxHolder">
           <p>Pardon this horible CSS, Im not really good at styling. P.s. User Photoes are squished just click on any tab away and then back to this page to fix. Im still trying to find what makes that bug happen.</p>

@@ -1,16 +1,14 @@
-var testArr [1,"+",2,"+",1]
+const testArray = [5,"+",5,"*",2];
 
-function OperateArray(arr){
-  return arr.reduce((accu,el,indx) =>{
-    switch(el) {
-    case "":
-        code block
-        break;
-    case n:
-        code block
-        break;
-    default:
-        code block
-}
-  },0)
-}
+function calculateArray(arr){
+  return arr.reduce((el,accu,indx) => {
+    if(indx == 0 && !isNaN(el)){
+      return el
+    }
+    if(isNaN(el)){
+
+    }else{
+      return accu
+    }
+  })
+};

@@ -9,21 +9,80 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 export default class extends Component {
   state = {
     calcOutput: "",
-    totalOperation: []
+    oppSlot: "",
+    numSlot: "",
+    accu: 0
   }
 
   // componentWillMount(){
   //
   // }
   //
-  handleNumber = (number) => {
-    let numArr = [number]
+  handleNumber = (num) => {
     this.setState({
-      numberHolder: this.state.totalOperation.concat(numArr) ,
-      calcOutput: number
-    })
+      numSlot: this.state.numSlot + num
+    });
   }
-  
+
+  handleOpp = (opp) => {
+    const { oppSlot, numSlot, accu, calcOutput } = this.state
+    if(oppSlot === ""){
+      this.setState({
+        numSlot: "",
+        accu: Number(numSlot),
+        oppSlot: opp,
+        calcOutput: calcOutput + " " + opp
+      });
+    }else if(numSlot !== "" && oppSlot !== ""){
+      switch(oppSlot) {
+        case "+":
+          let tempAccu = accu - Number(numSlot)
+          this.setState({
+            numSlot: "",
+            accu: tempAccu,
+            oppSlot: "",
+            calcOutput: accu
+          });
+          break;
+        case "-":
+          let tempAccu = accu - Number(numSlot)
+          this.setState({
+            numSlot: "",
+            accu: tempAccu,
+            oppSlot: "",
+            calcOutput: tempAccu
+          });
+          break;
+        case "*":
+          let tempAccu = accu - Number(numSlot)
+          this.setState({
+            numSlot: "",
+            accu: tempAccu,
+            oppSlot: "",
+            calcOutput: tempAccu
+          });
+          break;
+        case "/":
+          let tempAccu = accu - Number(numSlot)
+          this.setState({
+            numSlot: "",
+            accu: tempAccu,
+            oppSlot: "",
+            calcOutput: tempAccu
+          });
+          break;
+        default:
+          this.setState({
+            calcOutput: "error with that things of the syntax"
+          });
+      }
+    }else{
+      console.log("error ERROR SYNTAXICALS ERRORS")
+      this.setState({
+        calcOutput: "ERROR ERROR ERROR BITCH"
+      });
+    }
+  }
 
   render() {
     return(
